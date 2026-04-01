@@ -1,0 +1,10 @@
+---
+key: "EmployeeAPI-1.0.0"
+name : "EmployeeAPI"
+displayName : "EmployeeAPI"
+description: "EmployeeAPI"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/employee"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false

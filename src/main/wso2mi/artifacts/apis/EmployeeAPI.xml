@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/employee" name="EmployeeAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/">
+        <inSequence>
+            <property name="uri.var.host" expression="get-property('env', 'mi_host')"/>
+            <property name="uri.var.port" expression="get-property('env', 'mi_port')"/>
+
+            <log>
+              <property name="________________" value="Incoming request to EmployeeAPI"/>  
+              <property name="++++++++++++++++" expression="wso2:vault-lookup('user_pass')"/>  
+            </log>
+
+            <call>
+                <endpoint key="DependentAPIEndpoint"/>
+            </call>
+            <property name="dependentAPIResponse" scope="default" type="STRING" expression="json-eval($)"/>
+            <payloadFactory media-type="json" template-type="default">
+                <format>{"name":"sarindu", "dependent": $1}</format>
+                <args>
+                    <arg expression="get-property('dependentAPIResponse')" evaluator="xml"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+</api>

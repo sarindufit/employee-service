@@ -3,11 +3,11 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.microintegrator.projects</groupId>
-    <artifactId>employe-service</artifactId>
+    <artifactId>employee-service</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>employe-service</name>
-    <description>employe-service</description>
+    <name>employee-service</name>
+    <description>employee-service</description>
     <repositories>
       <repository>
           <id>wso2-nexus</id>
@@ -182,7 +182,7 @@
         <build>
           <plugins>
               <!-- Compile and build the class mediator jars -->
-              <plugin>
+            <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-compiler-plugin</artifactId>
               <executions>
@@ -394,9 +394,9 @@
       <maven.compiler.source>1.8</maven.compiler.source>
       <maven.compiler.target>1.8</maven.compiler.target>
       <project.scm.id>integration-project</project.scm.id>
-      <project.runtime.version>4.1.0</project.runtime.version>
+      <project.runtime.version>4.2.0</project.runtime.version>
       <dockerfile.base.image>wso2/wso2mi:${project.runtime.version}</dockerfile.base.image>
-      <dockerfile.name>employe-service:1.0.0</dockerfile.name>
+      <dockerfile.name>employee-service:1.0.0</dockerfile.name>
       <car.plugin.version>5.4.13</car.plugin.version>
       <test.server.type>local</test.server.type>
       <test.server.host>localhost</test.server.host>

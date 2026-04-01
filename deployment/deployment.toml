@@ -102,8 +102,8 @@ algorithm = "AES"
 # [mediation]
 # synapse.global_timeout_interval = "120000"  # interval in milliseconds
 
-# [secrets]
-# secret_key = "[secret value]"
+[secrets]
+user_pass = "[addedviadeploymentoml]"
 
 # [[service_catalog]]
 # apim_host = "https://localhost:9443"

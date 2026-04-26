@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: Employee API
+  version: 1.0.0
+  description: API that returns employee details along with dependent information from a downstream service.
+
+servers:
+  - url: http://localhost:8290/employee
+    description: WSO2 MI runtime
+
+paths:
+  /:
+    get:
+      summary: Get employee details
+      description: Returns employee information along with dependent data retrieved from DependentAPI.
+      operationId: getEmployee
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: sarindu
+                  dependent:
+                    type: object
+                    description: Response returned from Dependent API
+                    additionalProperties: true
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Dependent:
+      type: object
+      description: Generic dependent object returned by downstream API
+      additionalProperties: true

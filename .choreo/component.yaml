@@ -48,5 +48,5 @@ endpoints:
 
 dependencies:
     connectionReferences:
-    - name: dependent-service-con
+    - name: dependent-con
       resourceRef: service:/dependent/dependent-service/v1/27453/ORGANIZATION

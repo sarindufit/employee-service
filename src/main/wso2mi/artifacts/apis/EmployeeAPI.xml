@@ -2,7 +2,7 @@
 <api context="/employee" name="EmployeeAPI" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/">
         <inSequence>
-            <property name="uri.var.dependentAPIURL" expression="get-property('env', 'CHOREO_DEPENDENT_SERVICE_CON_SERVICEURL')"/>
+            <property name="uri.var.dependentAPIURL" expression="get-property('env', 'CHOREO_DEPENDENT_CON_SERVICEURL')"/>
 
             <log>
               <property name="________________" value="Incoming request to EmployeeAPI"/>  

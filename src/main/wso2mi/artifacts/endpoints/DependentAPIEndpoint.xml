@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="DependentAPIEndpoint" xmlns="http://ws.apache.org/ns/synapse">
-    <http method="get" uri-template="http://{uri.var.host}:{uri.var.port}/dependent">
+    <http method="get" uri-template="{uri.var.dependentAPIURL}/">
         <suspendOnFailure>
             <initialDuration>-1</initialDuration>
             <progressionFactor>1</progressionFactor>
